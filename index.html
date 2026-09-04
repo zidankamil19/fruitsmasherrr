@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fruit Smash 🍉</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- DEKORASI BACKGROUND -->
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+    <div class="cloud cloud3">☁️</div>
+
+    <main class="container">
+
+        <!-- ================= MENU AWAL ================= -->
+        <section class="screen" id="startScreen">
+
+            <div class="logo-box">
+                <h1>🍉 FRUIT SMASH 🍓</h1>
+                <p>Hancurkan buah dan kumpulkan poin sebanyak mungkin!</p>
+            </div>
+
+            <div class="mascot">🧒🏻🍎</div>
+
+            <div class="form-box">
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="👤 Masukkan Username"
+                    maxlength="15"
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="📱 Masukkan Nomor WhatsApp"
+                >
+
+                <button class="play-btn" onclick="startGame()">
+                    ▶ MULAI BERMAIN
+                </button>
+
+                <button class="leader-btn" onclick="showLeaderboard()">
+                    🏆 LEADERBOARD
+                </button>
+
+            </div>
+
+            <div class="rules">
+                <h3>🎮 Cara Bermain</h3>
+                <p>🍎 Klik buah untuk mendapatkan poin!</p>
+                <p>💣 Jangan klik bom, poin kamu akan berkurang!</p>
+                <p>🔥 Klik buah berturut-turut untuk mendapatkan COMBO!</p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= GAME ================= -->
+        <section class="screen hidden" id="gameScreen">
+
+            <div class="game-header">
+
+                <div class="stat score-stat">
+                    ⭐ SCORE
+                    <span id="score">0</span>
+                </div>
+
+                <div class="stat time-stat">
+                    ⏰ WAKTU
+                    <span id="time">30</span>
+                </div>
+
+                <div class="stat combo-stat">
+                    🔥 COMBO
+                    <span id="combo">0</span>
+                </div>
+
+            </div>
+
+
+            <div id="gameArea">
+
+                <div class="sun">☀️</div>
+
+                <div class="grass">
+                    🌱 🌼 🌱 🌻 🌱 🌼 🌱 🌻 🌱
+                </div>
+
+            </div>
+
+            <p class="game-info">
+                👆 CEPAT! Klik buahnya dan hindari bom! 💣
+            </p>
+
+        </section>
+
+
+        <!-- ================= GAME OVER ================= -->
+        <section class="screen hidden" id="gameOverScreen">
+
+            <div class="gameover-icon">🎉</div>
+
+            <h1>GAME SELESAI!</h1>
+
+            <p class="subtitle">Kamu berhasil mengumpulkan:</p>
+
+            <div class="result-box">
+
+                <p>⭐ TOTAL SCORE</p>
+
+                <h2 id="finalScore">0</h2>
+
+                <p id="resultMessage"></p>
+
+            </div>
+
+            <button class="play-btn" onclick="restartGame()">
+                🔄 MAIN LAGI
+            </button>
+
+            <button class="leader-btn" onclick="showLeaderboard()">
+                🏆 LIHAT LEADERBOARD
+            </button>
+
+            <button class="home-btn" onclick="backToMenu()">
+                🏠 MENU UTAMA
+            </button>
+
+        </section>
+
+
+        <!-- ================= LEADERBOARD ================= -->
+        <section class="screen hidden" id="leaderboardScreen">
+
+            <h1>🏆 LEADERBOARD 🏆</h1>
+
+            <p class="subtitle">
+                Top 10 Penghancur Buah Terbaik!
+            </p>
+
+            <div id="leaderboardList" class="leaderboard-list">
+
+                <div class="loading">
+                    🍎 Memuat data pemain...
+                </div>
+
+            </div>
+
+            <button class="home-btn" onclick="backToMenu()">
+                🏠 KEMBALI KE MENU
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
